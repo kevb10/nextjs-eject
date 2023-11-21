@@ -1,7 +1,7 @@
 {
-  "name": "@ligence-dev/nextjs-eject",
+  "name": "@kevb10/nextjs-eject",
   "version": "0.0.1",
-  "description": "Eject NextJs",
+  "description": "Eject your NextJS app to be AWS Lambda ready",
   "main": "index.js",
   "scripts": {
     "test": "jest",
