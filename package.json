@@ -39,5 +39,8 @@
     "@babel/parser": "^7.23.4",
     "@babel/traverse": "^7.23.4",
     "@babel/types": "^7.23.4"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
