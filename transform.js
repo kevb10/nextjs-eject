@@ -24,6 +24,24 @@ function transformFile(filePath) {
 				path.node.params = [t.identifier('event'), t.identifier('context')]; // Change parameters
 			}
 		},
+		VariableDeclarator(path) {
+			if (path.node.id.name === 'body' && path.node.init.type === 'AwaitExpression' &&
+				path.node.init.argument.type === 'CallExpression' &&
+				path.node.init.argument.callee.object.name === 'request' &&
+				path.node.init.argument.callee.property.name === 'json') {
+
+				path.node.init.argument.callee.object.name = 'event';
+			}
+		},
+		VariableDeclaration(path) {
+			if (path.node.declarations[0].id.name === 'queryParams' &&
+				path.node.declarations[0].init.type === 'MemberExpression' &&
+				path.node.declarations[0].init.object.name === 'request' &&
+				path.node.declarations[0].init.property.name === 'query') {
+
+				path.node.declarations[0].init.object.name = 'event';
+			}
+		},
 		ReturnStatement(path) {
 			// Logic to modify return statements for Lambda format
 			if (path.node.argument && path.node.argument.type === 'CallExpression' &&

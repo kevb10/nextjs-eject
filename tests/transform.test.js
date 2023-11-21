@@ -8,19 +8,22 @@ function createTsFile(content, filePath) {
 
 
 describe('transformFile function', () => {
-	const mockFilePath = path.join(__dirname, 'tempMockFile.ts');
-	const mockContent = `
+	describe('POST function is transformed correctly', () => {
+		const mockFilePath = path.join(__dirname, 'tempMockFile.ts');
+		const mockContent = `
 	declare const NextResponse: any;
 	declare type NextRequest = {};
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
+	const body = await request.json();
   return NextResponse.json({ message: 'Hello World' });
 }
 	`;
 
-	const expectedOutput = `
+		const expectedOutput = `
 	declare const NextResponse: any;
 	declare type NextRequest = {};
 	export async function handler(event, context) {
+		const body = await event.json();
 		return {
 			statusCode: 200,
 			headers: {
@@ -33,26 +36,78 @@ export async function GET(request: NextRequest) {
 	}	
 	`;
 
-	beforeAll(() => {
-		// Create the TypeScript file
-		createTsFile(mockContent, mockFilePath);
+		beforeAll(() => {
+			// Create the TypeScript file
+			createTsFile(mockContent, mockFilePath);
+		});
+
+		afterAll(() => {
+			// Delete the TypeScript file
+			if (fs.existsSync(mockFilePath)) {
+				fs.unlinkSync(mockFilePath);
+			}
+		});
+
+		test('transforms TypeScript file correctly', () => {
+			// Run your transformation function here
+			transformFile(mockFilePath);
+
+			// Read the transformed file
+			const transformedContent = fs.readFileSync(mockFilePath, 'utf8');
+
+			// Assert that the transformed content matches the expected output. Ignore whitespace.
+			expect(transformedContent.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
+		});
 	});
+	describe('GET function is transformed correctly', () => {
+		const mockFilePath = path.join(__dirname, 'tempMockFile.ts');
+		const mockContent = `
+	declare const NextResponse: any;
+	declare type NextRequest = {};
+export async function GET(request: NextRequest) {
+	const queryParams = request.query;
+  return NextResponse.json({ message: 'Hello World' });
+}
+	`;
 
-	afterAll(() => {
-		// Delete the TypeScript file
-		if (fs.existsSync(mockFilePath)) {
-			fs.unlinkSync(mockFilePath);
-		}
-	});
+		const expectedOutput = `
+	declare const NextResponse: any;
+	declare type NextRequest = {};
+	export async function handler(event, context) {
+		const queryParams = event.query;
+		return {
+			statusCode: 200,
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				message: 'Hello World'
+			})
+		};
+	}	
+	`;
 
-	test('transforms TypeScript file correctly', () => {
-		// Run your transformation function here
-		transformFile(mockFilePath);
+		beforeAll(() => {
+			// Create the TypeScript file
+			createTsFile(mockContent, mockFilePath);
+		});
 
-		// Read the transformed file
-		const transformedContent = fs.readFileSync(mockFilePath, 'utf8');
+		afterAll(() => {
+			// Delete the TypeScript file
+			if (fs.existsSync(mockFilePath)) {
+				fs.unlinkSync(mockFilePath);
+			}
+		});
 
-		// Assert that the transformed content matches the expected output. Ignore whitespace.
-		expect(transformedContent.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
+		test('transforms TypeScript file correctly', () => {
+			// Run your transformation function here
+			transformFile(mockFilePath);
+
+			// Read the transformed file
+			const transformedContent = fs.readFileSync(mockFilePath, 'utf8');
+
+			// Assert that the transformed content matches the expected output. Ignore whitespace.
+			expect(transformedContent.replace(/\s/g, '')).toBe(expectedOutput.replace(/\s/g, ''));
+		});
 	});
 });
