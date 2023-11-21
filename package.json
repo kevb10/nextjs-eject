@@ -1,0 +1,32 @@
+{
+  "name": "@ligence-dev/nextjs-eject",
+  "version": "0.0.1",
+  "description": "Eject NextJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ligence-dev/nextjs-eject.git"
+  },
+  "keywords": [
+    "nextjs-eject",
+    "nextjs",
+    "eject",
+    "react-eject",
+    "react",
+    "vercel-eject",
+    "vercel"
+  ],
+  "author": "Kevin Manase @kevinmanase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ligence-dev/nextjs-eject/issues"
+  },
+  "homepage": "https://github.com/ligence-dev/nextjs-eject#readme",
+  "devDependencies": {
+    "@types/node": "^20.9.3",
+    "jest": "^29.7.0"
+  }
+}
