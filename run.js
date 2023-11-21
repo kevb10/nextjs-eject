@@ -1,3 +1,3 @@
 const { eject } = require(".");
 
-eject('./test');
+eject('./nextjs_mock');

@@ -4,7 +4,8 @@
   "description": "Eject NextJs",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "real_test": "node run.js"
   },
   "repository": {
     "type": "git",
