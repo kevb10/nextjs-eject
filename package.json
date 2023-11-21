@@ -28,5 +28,12 @@
   "devDependencies": {
     "@types/node": "^20.9.3",
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/generator": "^7.23.4",
+    "@babel/parser": "^7.23.4",
+    "@babel/traverse": "^7.23.4",
+    "@babel/types": "^7.23.4"
   }
 }
