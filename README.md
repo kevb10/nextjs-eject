@@ -3,6 +3,9 @@
 
 ### *Eject your NextJS app to be AWS Lambda ready*
 
+![image](https://github.com/kevb10/nextjs-eject/assets/7396751/f9e9e465-6698-4bb4-b1b3-b5dc878db7b4)
+
+
 ## 📄 Description
 
 Are you looking to scale your NextJS application beyond what the NextJS API can efficiently handle? **@kevb10/nextjs-eject** seamlessly migrates your NextJS API routes to AWS Lambda functions, preparing your app to leverage the power, scalability, and cost-effectiveness of AWS.
