@@ -20,7 +20,7 @@ function eject(projectDir = process.cwd()) {
     path.join(projectDir, 'src', 'app', 'api'),
     path.join(projectDir, 'app', 'api')
   ];
-  console.log(possibleRoots)
+
   let apiDir;
   for (const root of possibleRoots) {
     if (fs.existsSync(root)) {
