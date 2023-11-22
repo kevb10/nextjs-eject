@@ -1,6 +1,6 @@
 {
   "name": "@kevb10/nextjs-eject",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Eject your NextJS app to be AWS Lambda ready",
   "bin": {
     "nextjs-eject": "cli.js"
