@@ -14,10 +14,10 @@ This plugin analyzes your NextJS project and generates corresponding Lambda func
 
 Key benefits:
 
-- Effortlessly transition to AWS Lambda backends
+- Effortlessly transition to AWS Lambda
 - Unlock unlimited scaling potential
 - Reduce infrastructure and traffic costs  
-- No vendor lock-in, take back control
+- Take back control
 - Generated Lambda functions are pre-configured and deployment-ready
 - Minimal changes required to your existing NextJS project
 - Fully customizable to match your infrastructure needs
@@ -34,11 +34,11 @@ NextJS 13 (App Router)
 
 ## 😋 Who cooked it?
 
-[![Kevin Manase](https://s.gravatar.com/avatar/e0947d54020257fb215d7310b6eac5ba?s=200)](https://ph7.me "Kevin Manase personal website")
+[![Kevin Manase](https://s.gravatar.com/avatar/e0947d54020257fb215d7310b6eac5ba?s=200)](https://twitter.com/kevinmanase "Kevin Manase personal website")
 
 [![@kevinmanase][twitter-image]](https://twitter.com/kevinmanase) [![kevb10][github-image]](https://github.com/kevb10)
 
-**[Kevin Manase](https://ph7.me)**, a highly passionate, zen &amp; pragmatic software engineer 😊
+**[Kevin Manase](https://twitter.com/kevinmanase)**, a highly passionate, zen &amp; pragmatic software engineer 😊
 
 ## ⚖️ License
 
