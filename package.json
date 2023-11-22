@@ -1,6 +1,6 @@
 {
   "name": "@kevb10/nextjs-eject",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Eject your NextJS app to be AWS Lambda ready",
   "bin": {
     "nextjs-eject": "cli.js"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ligence-dev/nextjs-eject.git"
+    "url": "git+https://github.com/kevb10/nextjs-eject.git"
   },
   "keywords": [
     "nextjs-eject",
@@ -26,9 +26,9 @@
   "author": "Kevin Manase @kevinmanase",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ligence-dev/nextjs-eject/issues"
+    "url": "https://github.com/kevb10/nextjs-eject/issues"
   },
-  "homepage": "https://github.com/ligence-dev/nextjs-eject#readme",
+  "homepage": "https://github.com/kevb10/nextjs-eject#readme",
   "devDependencies": {
     "@types/node": "^20.9.3",
     "jest": "^29.7.0"
